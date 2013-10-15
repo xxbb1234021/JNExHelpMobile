@@ -125,7 +125,7 @@ public class LoginActivity extends Activity
 		// Check for a valid password.
 		if (TextUtils.isEmpty(mPassword))
 		{
-			mPasswordView.setError(getString(R.string.error_field_required));
+			mPasswordView.setError(getString(R.string.error_password_field_required));
 			focusView = mPasswordView;
 			cancel = true;
 		}
@@ -139,7 +139,7 @@ public class LoginActivity extends Activity
 		// Check for a valid email address.
 		if (TextUtils.isEmpty(mEmail))
 		{
-			mEmailView.setError(getString(R.string.error_field_required));
+			mEmailView.setError(getString(R.string.error_email_field_required));
 			focusView = mEmailView;
 			cancel = true;
 		}

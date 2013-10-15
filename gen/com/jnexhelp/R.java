@@ -65,10 +65,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f060000;
         public static final int dummy_button=0x7f060001;
         public static final int dummy_content=0x7f060002;
-        public static final int error_field_required=0x7f060010;
+        public static final int error_email_field_required=0x7f060011;
         public static final int error_incorrect_password=0x7f06000f;
         public static final int error_invalid_email=0x7f06000d;
         public static final int error_invalid_password=0x7f06000e;
+        public static final int error_password_field_required=0x7f060010;
         public static final int hello_world=0x7f060005;
         public static final int login_progress_signing_in=0x7f06000c;
         public static final int prompt_password=0x7f060008;
