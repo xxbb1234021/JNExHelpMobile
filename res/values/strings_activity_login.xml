@@ -12,6 +12,7 @@
     <string name="error_invalid_email">这个邮件地址是无效的</string>
     <string name="error_invalid_password">这个密码太短</string>
     <string name="error_incorrect_password">这个密码是不正确的</string>
-    <string name="error_field_required">密码不能是空的</string>
+    <string name="error_password_field_required">密码不能是空的</string>
+    <string name="error_email_field_required">emial不能是空的</string>
 
 </resources>
