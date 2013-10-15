@@ -1,12 +1,10 @@
 package com.jnexhelp.Activity;
 
-import com.jnexhelp.R;
-import com.jnexhelp.R.layout;
-import com.jnexhelp.R.menu;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+
+import com.jnexhelp.R;
 
 public class RegisterActivity extends Activity
 {
