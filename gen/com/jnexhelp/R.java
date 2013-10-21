@@ -436,16 +436,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int welcome=0x7f02000a;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f0b0018;
-        public static final int action_settings=0x7f0b0017;
+        public static final int Relativelayout01=0x7f0b0012;
+        public static final int a=0x7f0b0013;
+        public static final int action_forgot_password=0x7f0b001c;
+        public static final int action_settings=0x7f0b001b;
+        public static final int b=0x7f0b0014;
+        public static final int c=0x7f0b0015;
         public static final int city_spinner=0x7f0b0006;
         public static final int city_text=0x7f0b0005;
         public static final int county_spinner=0x7f0b0009;
         public static final int county_text=0x7f0b0008;
         public static final int display_edit=0x7f0b000a;
         public static final int email=0x7f0b000e;
-        public static final int gridview=0x7f0b0012;
-        public static final int imageView_itemImage=0x7f0b0015;
+        public static final int gridview=0x7f0b0016;
+        public static final int imageView_itemImage=0x7f0b0019;
         public static final int login=0x7f0b0010;
         public static final int login_form=0x7f0b000d;
         public static final int login_status=0x7f0b000b;
@@ -453,14 +457,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int password=0x7f0b000f;
         public static final int province_spinner=0x7f0b0003;
         public static final int province_text=0x7f0b0002;
-        public static final int relativeLayout1=0x7f0b0014;
+        public static final int relativeLayout1=0x7f0b0018;
         public static final int sign_in_button=0x7f0b0011;
         public static final int tableLayout1=0x7f0b0000;
         public static final int tableRow1=0x7f0b0001;
         public static final int tableRow2=0x7f0b0004;
         public static final int tableRow3=0x7f0b0007;
-        public static final int textView_itemText=0x7f0b0016;
-        public static final int welcome_image_view=0x7f0b0013;
+        public static final int textView_itemText=0x7f0b001a;
+        public static final int welcome_image_view=0x7f0b0017;
     }
     public static final class layout {
         public static final int activity_city=0x7f030000;
