@@ -1,16 +1,18 @@
 package com.jnexhelp;
 
-import com.jnexhelp.Activity.MainActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.jnexhelp.Activity.MainActivity;
 
 public class WelcomeActivity extends Activity implements AnimationListener
 {
@@ -21,15 +23,19 @@ public class WelcomeActivity extends Activity implements AnimationListener
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		//隐去标题栏（应用程序的名字）  
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//隐去状态栏部分(电池等图标和一切修饰部分)
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_welcome);
-		
+
 		imageView = (ImageView) findViewById(R.id.welcome_image_view);
 		animation = AnimationUtils.loadAnimation(this, R.anim.welcome_alpha);
 		animation.setFillAfter(true);//启动Fill保持
 		animation.setFillAfter(true); //设置动画的最后一帧是保持在View上面
 		imageView.setAnimation(animation);
 		animation.setAnimationListener(this); //为动画设置监听
-		
+
 	}
 
 	@Override

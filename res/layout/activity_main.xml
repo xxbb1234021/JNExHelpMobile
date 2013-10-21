@@ -4,34 +4,33 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:id="@+id/Relativelayout01"
+    <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="42dp"
-        >
+        android:layout_height="wrap_content" >
 
-        <ImageButton
-            android:id="@+id/a"
-            android:layout_width="36dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="10dp"
-            />
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_bg" >
 
-        <ImageButton
-            android:id="@+id/b"
-            android:layout_width="125dp"
-            android:layout_height="27dp"
-            android:layout_centerInParent="true"
-             />
+            <Button
+                android:id="@+id/btn_top_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/login" />
 
-        <ImageButton
-            android:id="@+id/c"
-            android:layout_width="48dp"
-            android:layout_height="27dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-             />
-    </RelativeLayout>
+            
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-3dp"
+            android:src="@drawable/logo" />
+    </FrameLayout>
 
     <GridView
         android:id="@+id/gridview"

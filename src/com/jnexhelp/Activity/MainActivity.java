@@ -6,10 +6,15 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -27,6 +32,11 @@ public class MainActivity extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		//隐去标题栏（应用程序的名字）  
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//隐去状态栏部分(电池等图标和一切修饰部分)
+		//this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 		setContentView(R.layout.activity_main);
 		gridView = (GridView) findViewById(R.id.gridview);
 
@@ -58,8 +68,8 @@ public class MainActivity extends Activity
 				switch (index)
 				{
 				case 1:
-					startActivity(new Intent(context, LoginActivity.class));  
-	                finish();  
+					startActivity(new Intent(context, LoginActivity.class));
+					finish();
 					break;
 
 				default:
@@ -67,5 +77,41 @@ public class MainActivity extends Activity
 				}
 			}
 		});
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0)
+		{
+			dialog();
+			return false;
+		}
+		return false;
+	}
+
+	protected void dialog()
+	{
+		AlertDialog.Builder builder = new Builder(MainActivity.this);
+		builder.setMessage("确定要退出吗?");
+		builder.setTitle("提示");
+		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int which)
+			{
+				dialog.dismiss();
+				MainActivity.this.finish();
+			}
+		});
+		builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int which)
+			{
+				dialog.dismiss();
+			}
+		});
+		builder.create().show();
 	}
 }
