@@ -4,6 +4,15 @@ import com.jnexhelp.R;
 
 public class CountyAndCityUtil
 {
+	public static int[] areaofhuadong = { R.array.shanghai_province_item, R.array.shandong_province_item, R.array.anhui_province_item,
+			R.array.zhejiang_province_item, R.array.fujian_province_item, R.array.jiangsu_province_item, R.array.jiangxi_province_item };
+	public static int[] areaofhuazhong = {};
+	public static int[] areaofhuanan = {};
+	public static int[] areaofhuabei = {};
+	public static int[] areaofxixinan = {};
+	public static int[] areaofxibei = {};
+	public static int[] areaofdongbei = {};
+
 	//市，自治区集合
 	public static int[] city = { R.array.beijin_province_item, R.array.tianjin_province_item, R.array.heibei_province_item,
 			R.array.shanxi1_province_item, R.array.neimenggu_province_item, R.array.liaoning_province_item, R.array.jilin_province_item,

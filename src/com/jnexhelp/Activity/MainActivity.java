@@ -89,7 +89,10 @@ public class MainActivity extends Activity
 					startActivity(new Intent(context, LoginActivity.class));
 					finish();
 					break;
-
+				case 2:
+					startActivity(new Intent(context, CityActivity.class));
+					finish();
+					break;
 				default:
 					break;
 				}

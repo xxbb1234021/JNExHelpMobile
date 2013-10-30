@@ -1,4 +1,4 @@
-package com.jnexhelp;
+package com.jnexhelp.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,11 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.jnexhelp.Activity.MainActivity;
+import com.jnexhelp.R;
+import com.jnexhelp.R.anim;
+import com.jnexhelp.R.id;
+import com.jnexhelp.R.layout;
+import com.jnexhelp.R.menu;
 
 public class WelcomeActivity extends Activity implements AnimationListener
 {
@@ -32,7 +36,7 @@ public class WelcomeActivity extends Activity implements AnimationListener
 		imageView = (ImageView) findViewById(R.id.welcome_image_view);
 		animation = AnimationUtils.loadAnimation(this, R.anim.welcome_alpha);
 		animation.setFillAfter(true);//启动Fill保持
-		animation.setFillAfter(true); //设置动画的最后一帧是保持在View上面
+		//animation.setFillAfter(true); //设置动画的最后一帧是保持在View上面
 		imageView.setAnimation(animation);
 		animation.setAnimationListener(this); //为动画设置监听
 
