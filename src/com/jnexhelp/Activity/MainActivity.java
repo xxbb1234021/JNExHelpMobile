@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -29,6 +30,9 @@ public class MainActivity extends Activity
 	private Context context = null;
 	private GridView gridView = null;
 
+	private Button returnButton;
+	private Button loginButton;
+
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
@@ -38,6 +42,20 @@ public class MainActivity extends Activity
 		//this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		setContentView(R.layout.activity_main);
+
+		returnButton = (Button) findViewById(R.id.btn_title_left);
+		returnButton.setVisibility(View.INVISIBLE);
+
+		loginButton = (Button) findViewById(R.id.btn_title_right);
+		loginButton.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				gotoLoginActivity();
+			}
+		});
+
 		gridView = (GridView) findViewById(R.id.gridview);
 
 		List<Map<String, Object>> meumList = new ArrayList<Map<String, Object>>();
@@ -113,5 +131,12 @@ public class MainActivity extends Activity
 			}
 		});
 		builder.create().show();
+	}
+
+	private void gotoLoginActivity()
+	{
+		Intent intent = new Intent(this, LoginActivity.class);
+		startActivity(intent);
+		this.finish();
 	}
 }

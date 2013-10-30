@@ -4,39 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/top_bg" >
-
-            <Button
-                android:id="@+id/btn_top_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/login" />
-
-            <Button
-                android:id="@+id/btn_top_return"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/top_return" />
-        </FrameLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-3dp"
-            android:src="@drawable/logo" />
-    </FrameLayout>
+    <include layout="@layout/title_bar" />
 
     <LinearLayout
         android:id="@+id/login_status"

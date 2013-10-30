@@ -98,7 +98,7 @@ public class LoginActivity extends Activity
 			}
 		});
 
-		returnButton = (Button) findViewById(R.id.btn_top_return);
+		returnButton = (Button) findViewById(R.id.btn_title_left);
 		returnButton.setOnClickListener(new View.OnClickListener()
 		{
 			@Override

@@ -435,39 +435,49 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic9=0x7f020009;
         public static final int ic_launcher=0x7f02000a;
         public static final int login=0x7f02000b;
-        public static final int logo=0x7f02000c;
-        public static final int top_bg=0x7f02000d;
-        public static final int top_return=0x7f02000e;
-        public static final int welcome=0x7f02000f;
+        public static final int login_bg=0x7f02000c;
+        public static final int logo=0x7f02000d;
+        public static final int top_back_left=0x7f02000e;
+        public static final int top_back_leftpress=0x7f02000f;
+        public static final int top_bg=0x7f020010;
+        public static final int top_button_right=0x7f020011;
+        public static final int top_button_rightpress=0x7f020012;
+        public static final int top_left_button=0x7f020013;
+        public static final int top_return=0x7f020014;
+        public static final int top_right_button=0x7f020015;
+        public static final int top_rightbtn_normal=0x7f020016;
+        public static final int top_rightbtn_pressed=0x7f020017;
+        public static final int welcome=0x7f020018;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f0b001a;
-        public static final int action_settings=0x7f0b0019;
-        public static final int btn_top_map=0x7f0b000b;
-        public static final int btn_top_return=0x7f0b000c;
+        public static final int action_forgot_password=0x7f0b001b;
+        public static final int action_settings=0x7f0b001a;
+        public static final int btn_title_left=0x7f0b0017;
+        public static final int btn_title_right=0x7f0b0019;
         public static final int city_spinner=0x7f0b0006;
         public static final int city_text=0x7f0b0005;
         public static final int county_spinner=0x7f0b0009;
         public static final int county_text=0x7f0b0008;
         public static final int display_edit=0x7f0b000a;
-        public static final int email=0x7f0b0010;
-        public static final int gridview=0x7f0b0014;
-        public static final int imageView_itemImage=0x7f0b0017;
-        public static final int login=0x7f0b0012;
-        public static final int login_form=0x7f0b000f;
-        public static final int login_status=0x7f0b000d;
-        public static final int login_status_message=0x7f0b000e;
-        public static final int password=0x7f0b0011;
+        public static final int email=0x7f0b000e;
+        public static final int gridview=0x7f0b0012;
+        public static final int imageView_itemImage=0x7f0b0015;
+        public static final int login=0x7f0b0010;
+        public static final int login_form=0x7f0b000d;
+        public static final int login_status=0x7f0b000b;
+        public static final int login_status_message=0x7f0b000c;
+        public static final int password=0x7f0b000f;
         public static final int province_spinner=0x7f0b0003;
         public static final int province_text=0x7f0b0002;
-        public static final int relativeLayout=0x7f0b0016;
-        public static final int sign_in_button=0x7f0b0013;
+        public static final int relativeLayout=0x7f0b0014;
+        public static final int sign_in_button=0x7f0b0011;
         public static final int tableLayout1=0x7f0b0000;
         public static final int tableRow1=0x7f0b0001;
         public static final int tableRow2=0x7f0b0004;
         public static final int tableRow3=0x7f0b0007;
-        public static final int textView_itemText=0x7f0b0018;
-        public static final int welcome_image_view=0x7f0b0015;
+        public static final int textView_itemText=0x7f0b0016;
+        public static final int tv_top_title=0x7f0b0018;
+        public static final int welcome_image_view=0x7f0b0013;
     }
     public static final class layout {
         public static final int activity_city=0x7f030000;
@@ -476,6 +486,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_register=0x7f030003;
         public static final int activity_welcome=0x7f030004;
         public static final int main_gridview_item=0x7f030005;
+        public static final int title_bar=0x7f030006;
     }
     public static final class menu {
         public static final int city=0x7f0a0000;
