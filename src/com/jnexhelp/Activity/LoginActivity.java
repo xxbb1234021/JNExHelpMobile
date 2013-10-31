@@ -21,8 +21,9 @@ import android.widget.TextView;
 import com.jnexhelp.R;
 
 /**
- * Activity which displays a login screen to the user, offering registration as
- * well.
+ * 
+ * @author kevin
+ *
  */
 public class LoginActivity extends Activity
 {

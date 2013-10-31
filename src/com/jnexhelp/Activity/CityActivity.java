@@ -1,19 +1,27 @@
 package com.jnexhelp.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.jnexhelp.R;
 import com.jnexhelp.util.CountyAndCityUtil;
 
+/**
+ * 
+ * @author kevin
+ *
+ */
 public class CityActivity extends Activity
 {
 	private Integer provinceId;
@@ -33,6 +41,8 @@ public class CityActivity extends Activity
 	private ArrayAdapter<CharSequence> cityAdapter;
 	private ArrayAdapter<CharSequence> countyAdapter;
 
+	private Button returnButton;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -43,6 +53,17 @@ public class CityActivity extends Activity
 		//this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		setContentView(R.layout.activity_city);
+
+		returnButton = (Button) findViewById(R.id.btn_title_left);
+		returnButton.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				returnLastActivity();
+			}
+		});
+
 		loadSpinner();
 	}
 
@@ -250,4 +271,20 @@ public class CityActivity extends Activity
 		// spin.setSelection(0,true);
 	}
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		if (keyCode == KeyEvent.KEYCODE_BACK)
+		{
+			returnLastActivity();
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	private void returnLastActivity()
+	{
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
+		this.finish();
+	}
 }

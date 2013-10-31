@@ -25,6 +25,11 @@ import android.widget.Toast;
 import com.jnexhelp.R;
 import com.jnexhelp.util.ImagesTextUtil;
 
+/**
+ * 
+ * @author kevin
+ *
+ */
 public class MainActivity extends Activity
 {
 	private Context context = null;
@@ -90,6 +95,10 @@ public class MainActivity extends Activity
 					finish();
 					break;
 				case 2:
+					startActivity(new Intent(context, HelpMsgListViewActivity.class));
+					finish();
+					break;
+				case 3:
 					startActivity(new Intent(context, CityActivity.class));
 					finish();
 					break;

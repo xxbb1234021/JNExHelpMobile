@@ -59,6 +59,7 @@
         <activity android:name="com.jnexhelp.Activity.MainActivity" />
         <activity android:name="com.jnexhelp.Activity.LoginActivity" />
         <activity android:name="com.jnexhelp.Activity.CityActivity" />
+        <activity android:name="com.jnexhelp.Activity.HelpMsgListViewActivity" />
     </application>
 
 </manifest>

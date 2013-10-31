@@ -2,6 +2,11 @@ package com.jnexhelp.util;
 
 import com.jnexhelp.R;
 
+/**
+ * 
+ * @author kevin
+ *
+ */
 public class CountyAndCityUtil
 {
 	public static int[] areaofhuadong = { R.array.shanghai_province_item, R.array.shandong_province_item, R.array.anhui_province_item,

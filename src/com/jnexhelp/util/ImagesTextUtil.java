@@ -2,6 +2,11 @@ package com.jnexhelp.util;
 
 import com.jnexhelp.R;
 
+/**
+ * 
+ * @author kevin
+ *
+ */
 public class ImagesTextUtil
 {
 	public static int[] mainActivityImages = { R.drawable.ic1, R.drawable.ic2, R.drawable.ic3, R.drawable.ic4, R.drawable.ic5, R.drawable.ic6,

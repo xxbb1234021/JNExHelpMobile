@@ -8,13 +8,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CityActivity" >
 
+    <include layout="@layout/title_bar" />
+
     <TableLayout
         android:id="@+id/tableLayout1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:paddingTop="20px"
         android:stretchColumns="1" >
-        
+
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
