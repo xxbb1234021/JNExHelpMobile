@@ -7,7 +7,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +18,10 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,11 +39,17 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 	private HelpMsgDataAdapter adapter;
 	private View loadMoreView;
 	private ListView listView;
-	
+
 	private Button loadMoreButton;
 	private Button returnButton;
 
-	private Handler handler = new Handler();
+	//private Handler handler = new Handler();
+
+	private LinearLayout loadingLayout;
+	private LayoutParams mLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+	private LayoutParams FFlayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
+
+	private Thread mThread;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -52,6 +63,15 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 
 		setContentView(R.layout.activity_loadmoredata);
 
+		initUI();
+
+		initializeAdapter();
+		listView.setAdapter(adapter);
+		listView.setOnScrollListener(this);
+	}
+
+	private void initUI()
+	{
 		returnButton = (Button) findViewById(R.id.btn_title_left);
 		returnButton.setOnClickListener(new View.OnClickListener()
 		{
@@ -62,11 +82,37 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 			}
 		});
 
+		// 线性布局   
+		LinearLayout layout = new LinearLayout(this);
+		// 设置布局 水平方向   
+		layout.setOrientation(LinearLayout.HORIZONTAL);
+		// 进度条   
+		ProgressBar progressBar = new ProgressBar(this);
+		// 进度条显示位置   
+		progressBar.setPadding(0, 0, 15, 0);
+		// 把进度条加入到layout中   
+		layout.addView(progressBar, mLayoutParams);
+		// 文本内容   
+		TextView textView = new TextView(this);
+		textView.setText("加载中...");
+		textView.setGravity(Gravity.CENTER_VERTICAL);
+		// 把文本加入到layout中   
+		layout.addView(textView, FFlayoutParams);
+		// 设置layout的重力方向，即对齐方式是   
+		layout.setGravity(Gravity.CENTER);
+		// 设置ListView的页脚layout   
+		loadingLayout = new LinearLayout(this);
+		loadingLayout.addView(layout, mLayoutParams);
+		loadingLayout.setGravity(Gravity.CENTER);
+
+		listView = (ListView) findViewById(R.id.list_msg);
+		listView.addFooterView(loadingLayout); //设置列表底部视图   
+
+		/*
 		loadMoreView = getLayoutInflater().inflate(R.layout.loadmoredata_button, null);
 		loadMoreButton = (Button) loadMoreView.findViewById(R.id.loadmore_button);
 		loadMoreButton.setOnClickListener(new View.OnClickListener()
 		{
-
 			@Override
 			public void onClick(View v)
 			{
@@ -88,9 +134,7 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 
 		listView = (ListView) findViewById(R.id.list_msg);
 		listView.addFooterView(loadMoreView); //设置列表底部视图   
-		initializeAdapter();
-		listView.setAdapter(adapter);
-		listView.setOnScrollListener(this);
+		*/
 	}
 
 	/**   
@@ -137,7 +181,6 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 				adapter.addNewsItem(item);
 			}
 		}
-
 	}
 
 	@Override
@@ -152,13 +195,66 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 		Log.e("totalItemCount = ", totalItemCount + "");
 		Log.e("========================= ", "========================");
 
+		if (firstVisibleItem + visibleItemCount == totalItemCount)
+		{   //开线程去下载网络数据            
+			if (mThread == null || !mThread.isAlive())
+			{
+				mThread = new Thread()
+				{
+					@Override
+					public void run()
+					{
+						try
+						{ //这里放你网络数据请求的方法，我在这里用线程休眠5秒方法来处理 
+							Thread.sleep(1500);
+						}
+						catch (InterruptedException e)
+						{
+							e.printStackTrace();
+						}
+						Message message = new Message();
+						message.what = 1;
+						handler.sendMessage(message);
+					}
+				};
+				mThread.start();
+			}
+		}
+
 		//如果所有的记录选项等于数据集的条数，则移除列表底部视图   
 		if (totalItemCount == datasize + 1)
 		{
-			listView.removeFooterView(loadMoreView);
+			listView.removeFooterView(loadingLayout);
 			Toast.makeText(this, "数据全部加载完!", Toast.LENGTH_LONG).show();
 		}
 	}
+
+	private Handler handler = new Handler()
+	{
+		@Override
+		public void handleMessage(Message msg)
+		{
+			switch (msg.what)
+			{
+			case 1:
+				if (adapter.getCount() <= datasize)
+				{
+					loadMoreData();
+					Toast.makeText(getApplicationContext(), "第" + adapter.getCount() / 10 / 2 + "页", Toast.LENGTH_LONG).show();
+				}
+				else
+				{
+					listView.removeFooterView(loadingLayout);
+				}
+				//重新刷新Listview的adapter里面数据              
+				adapter.notifyDataSetChanged();
+
+				break;
+			default:
+				break;
+			}
+		}
+	};
 
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState)
@@ -168,7 +264,7 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 		if (scrollState == OnScrollListener.SCROLL_STATE_IDLE && visibleLastIndex == lastIndex)
 		{
 			//自动加载,可以在这里放置异步加载数据的代码 
-			
+
 		}
 	}
 
