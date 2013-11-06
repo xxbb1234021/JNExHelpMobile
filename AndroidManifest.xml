@@ -45,11 +45,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>
         -->
-        <activity
-            android:name="com.jnexhelp.Activity.WelcomeActivity"
-            android:label="@string/title_activity_welcome" >
+        <activity android:name="com.jnexhelp.Activity.WelcomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,6 +58,7 @@
         <activity android:name="com.jnexhelp.Activity.LoginActivity" />
         <activity android:name="com.jnexhelp.Activity.CityActivity" />
         <activity android:name="com.jnexhelp.Activity.HelpMsgListViewActivity" />
+        <activity android:name="com.jnexhelp.Activity.RegisterActivity" />
     </application>
 
 </manifest>

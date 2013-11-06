@@ -9,5 +9,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_city">CityActivity</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="register_tip">提示 \n带*项为必填项\n填写邮箱方便您找回密码以及了解更多信息</string>
+    <string name="sending_request">正在发送请求</string>
 
 </resources>
