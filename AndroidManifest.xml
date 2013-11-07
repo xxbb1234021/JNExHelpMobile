@@ -59,6 +59,8 @@
         <activity android:name="com.jnexhelp.Activity.CityActivity" />
         <activity android:name="com.jnexhelp.Activity.HelpMsgListViewActivity" />
         <activity android:name="com.jnexhelp.Activity.RegisterActivity" />
+        <activity android:name="com.jnexhelp.Activity.RegisterAddActivity" />
+        <activity android:name="com.jnexhelp.Activity.SkillActivity" />
     </application>
 
 </manifest>

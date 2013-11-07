@@ -13,7 +13,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -46,7 +45,7 @@ public class RegisterActivity extends Activity implements OnClickListener
 	{
 		super.onCreate(savedInstanceState);
 		//隐去标题栏（应用程序的名字）  
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//隐去状态栏部分(电池等图标和一切修饰部分)
 		//this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -91,7 +90,6 @@ public class RegisterActivity extends Activity implements OnClickListener
 	@Override
 	public void onClick(View v)
 	{
-		// TODO Auto-generated method stub
 		switch (v.getId())
 		{
 		case R.id.register_btn:

@@ -13,7 +13,6 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseAdapter;
@@ -57,20 +56,20 @@ public class HelpMsgListViewActivity extends Activity implements OnScrollListene
 		super.onCreate(savedInstanceState);
 
 		//隐去标题栏（应用程序的名字）  
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//隐去状态栏部分(电池等图标和一切修饰部分)
 		//this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		setContentView(R.layout.activity_loadmoredata);
 
-		initUI();
+		initView();
 
 		initializeAdapter();
 		listView.setAdapter(adapter);
 		listView.setOnScrollListener(this);
 	}
 
-	private void initUI()
+	private void initView()
 	{
 		returnButton = (Button) findViewById(R.id.btn_title_left);
 		returnButton.setOnClickListener(new View.OnClickListener()

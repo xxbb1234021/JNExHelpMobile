@@ -27,20 +27,20 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingLeft="10.0dip"
-                android:text="邮箱:"
+                android:text="手机号码:"
                 android:textColor="@android:color/black"
                 android:textSize="13.0sp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/phone"
                 android:layout_width="1px"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10.0dip"
                 android:layout_marginRight="15.0dip"
                 android:layout_weight="3"
                 android:background="@android:color/white"
-                android:hint="请输入邮箱"
-                android:inputType="textEmailAddress"
+                android:hint="请输入手机号码"
+                android:inputType="number"
                 android:maxLength="20"
                 android:paddingLeft="10.0dip"
                 android:textColor="#ff545454"
@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingLeft="15.0dip"
-                android:text="昵称:"
+                android:text="QQ:"
                 android:textColor="@android:color/black"
                 android:textSize="13.0sp" />
 
@@ -76,7 +76,8 @@
                 android:layout_marginRight="15.0dip"
                 android:layout_weight="3"
                 android:background="@android:color/white"
-                android:hint="请输入昵称"
+                android:hint="请输入QQ"
+                android:inputType="number"
                 android:maxLength="20"
                 android:paddingLeft="10.0dip"
                 android:textColor="#ff545454"
@@ -100,131 +101,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingLeft="15.0dip"
-                android:text="密码:"
-                android:textColor="@android:color/black"
-                android:textSize="13.0sp" />
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="1px"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
-                android:layout_marginRight="15.0dip"
-                android:layout_weight="3"
-                android:background="@android:color/white"
-                android:hint="请输入密码"
-                android:inputType="textPassword"
-                android:maxLength="20"
-                android:paddingLeft="10.0dip"
-                android:textColor="#ff545454"
-                android:textSize="13.0sp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1.0px"
-            android:background="@drawable/reg_shape_line" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="50.0dip"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="1px"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:paddingLeft="10.0dip"
-                android:text="确认密码:"
-                android:textColor="@android:color/black"
-                android:textSize="13.0sp" />
-
-            <EditText
-                android:id="@+id/re_password"
-                android:layout_width="1px"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
-                android:layout_marginRight="15.0dip"
-                android:layout_weight="3"
-                android:background="@android:color/white"
-                android:hint="请输入确认密码"
-                android:inputType="textPassword"
-                android:maxLength="20"
-                android:paddingLeft="10.0dip"
-                android:textColor="#ff545454"
-                android:textSize="13.0sp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1.0px"
-            android:background="@drawable/reg_shape_line" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="50.0dip"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="1px"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:paddingLeft="15.0dip"
-                android:text="性别:"
-                android:textColor="@android:color/black"
-                android:textSize="13.0sp" />
-
-            <RadioGroup
-                android:id="@+id/sex"
-                android:layout_width="1px"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
-                android:layout_marginRight="15.0dip"
-                android:layout_weight="3"
-                android:background="@android:color/white"
-                android:orientation="horizontal"
-                android:paddingLeft="10.0dip"
-                android:textColor="#ff545454"
-                android:textSize="13.0sp" >
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="男"
-                    android:textColor="#ff545454"
-                    android:textSize="13.0sp" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="女"
-                    android:textColor="#ff545454"
-                    android:textSize="13.0sp" />
-            </RadioGroup>
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1.0px"
-            android:background="@drawable/reg_shape_line" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="50.0dip"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="1px"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:paddingLeft="15.0dip"
-                android:text="职业:"
+                android:text="微信:"
                 android:textColor="@android:color/black"
                 android:textSize="13.0sp" />
 
@@ -236,7 +113,7 @@
                 android:layout_marginRight="15.0dip"
                 android:layout_weight="3"
                 android:background="@android:color/white"
-                android:hint="请输入职业"
+                android:hint="请输入微信"
                 android:maxLength="20"
                 android:paddingLeft="10.0dip"
                 android:textColor="#ff545454"
@@ -259,22 +136,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:paddingLeft="15.0dip"
-                android:text="生日:"
+                android:paddingLeft="10.0dip"
+                android:text="新浪微博:"
                 android:textColor="@android:color/black"
                 android:textSize="13.0sp" />
 
             <EditText
-                android:id="@+id/birthday"
+                android:id="@+id/occupation"
                 android:layout_width="1px"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10.0dip"
                 android:layout_marginRight="15.0dip"
                 android:layout_weight="3"
                 android:background="@android:color/white"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:hint="请输入生日"
+                android:hint="请输入新浪微博"
                 android:maxLength="20"
                 android:paddingLeft="10.0dip"
                 android:textColor="#ff545454"
@@ -293,7 +168,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/register_tip"
+            android:text="@string/register_add_tip"
             android:textColor="@color/button_unselected"
             android:textSize="14.0sp" />
     </LinearLayout>
@@ -306,7 +181,7 @@
         android:layout_marginRight="20.0dip"
         android:layout_marginTop="20.0dip"
         android:background="@drawable/reg_op_bg_selector"
-        android:text="注 册"
+        android:text="完 成"
         android:textColor="#ff000000"
         android:textSize="18.0sp" />
 

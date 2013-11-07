@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="skill_category">
+        <item>请选择您擅长的法律技能或知识</item>
+        <item>请选择您擅长的股票技能或知识</item>
+        <item>请选择您擅长的平面或3D知识</item>
+    </string-array>
+    <string-array name="skill_item">
+        <item>案件代理,法律咨询,代写文书,发律师函,法律顾问</item>
+        <item>股票点评,个股推荐</item>
+        <item>logo设计,平面设计,照片处理,3D制作,Flash动画制作,ppt制作或优化</item>
+    </string-array>
+
+</resources>
