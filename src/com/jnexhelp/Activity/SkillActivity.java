@@ -25,21 +25,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jnexhelp.R;
-import com.jnexhelp.util.SkillUtil;
 
 public class SkillActivity extends Activity
 {
-	private LinearLayout btn_layout;
+	private static final String G_CB = "G_CB";
+	private static final String C_CB = "C_CB";
+	private static final int TEXTSIZE = 8; //button上字体大小
+	private static final int TOUMD = 100; // 0~255透明度值
+	
+	private LinearLayout btnLayout;
 	private ExpandableListView expandableListView;
 	private List<String> groupArray;
 	private List<List<String>> childArray;
 	private List<Map<String, Boolean>> groupCheckBox;
 	private List<List<Map<String, Boolean>>> childCheckBox;
 	private List<Map<String, Object>> btnArray;
-	private static final String G_CB = "G_CB";
-	private static final String C_CB = "C_CB";
-	private static final int TEXTSIZE = 8; //button上字体大小
-	private static final int TOUMD = 100; // 0~255透明度值
+
 	private LinearLayout.LayoutParams atEditBtn;
 
 	private Button returnButton;
@@ -51,19 +52,6 @@ public class SkillActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_skill);
-
-		returnButton = (Button) findViewById(R.id.btn_title_left);
-		returnButton.setOnClickListener(new View.OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				returnLastActivity();
-			}
-		});
-		
-		confirmButton = (Button)findViewById(R.id.btn_title_right);
-		confirmButton.setText("提交");
 
 		initView();
 
@@ -137,12 +125,25 @@ public class SkillActivity extends Activity
 
 	private void initView()
 	{
+		returnButton = (Button) findViewById(R.id.btn_title_left);
+		returnButton.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				returnLastActivity();
+			}
+		});
+		
+		confirmButton = (Button)findViewById(R.id.btn_title_right);
+		confirmButton.setText("提交");
+		
 		groupArray = new ArrayList<String>();
 		childArray = new ArrayList<List<String>>();
 		groupCheckBox = new ArrayList<Map<String, Boolean>>();
 		childCheckBox = new ArrayList<List<Map<String, Boolean>>>();
 		btnArray = new ArrayList<Map<String, Object>>();
-		btn_layout = (LinearLayout) findViewById(R.id.btn__layout);
+		btnLayout = (LinearLayout) findViewById(R.id.btn__layout);
 		expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
 	}
 
@@ -343,7 +344,7 @@ public class SkillActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				btn_layout.removeView(btn);
+				btnLayout.removeView(btn);
 				groupCheckBox.get(groupPosition).put(G_CB, false);
 				changChildStates(groupPosition, false);
 				adapter.notifyDataSetChanged();
@@ -363,7 +364,7 @@ public class SkillActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				btn_layout.removeView(btn);
+				btnLayout.removeView(btn);
 				childCheckBox.get(groupPosition).get(childPosition).put(C_CB, false);
 				removeBtn(btn_id);
 				reSetBtn();
@@ -414,11 +415,11 @@ public class SkillActivity extends Activity
 	{
 		atEditBtn = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		atEditBtn.gravity = Gravity.CENTER;
-		btn_layout.removeAllViews();
+		btnLayout.removeAllViews();
 		for (int i = 0; i < btnArray.size(); i++)
 		{
 			Button btn = (Button) btnArray.get(i).get("btn");
-			btn_layout.addView(btn, atEditBtn);
+			btnLayout.addView(btn, atEditBtn);
 		}
 	}
 

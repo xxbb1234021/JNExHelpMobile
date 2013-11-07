@@ -36,7 +36,6 @@ public class WelcomeActivity extends Activity implements AnimationListener
 		imageView = (ImageView) findViewById(R.id.welcome_image_view);
 		animation = AnimationUtils.loadAnimation(this, R.anim.welcome_alpha);
 		animation.setFillAfter(true);//启动Fill保持
-		//animation.setFillAfter(true); //设置动画的最后一帧是保持在View上面
 		imageView.setAnimation(animation);
 		animation.setAnimationListener(this); //为动画设置监听
 
